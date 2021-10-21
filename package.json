@@ -1,7 +1,7 @@
 {
-  "name": "ui-review-tool",
+  "name": "revision-tool",
   "version": "1.0.0",
-  "description": "",
+  "description": "旨在帮助前端工程师在界面重构阶段就能快速发现页面和视觉稿的差异，减少大量和设计师的沟通、走查成本。",
   "main": "dist/index.js",
   "scripts": {
     "dev": "gulp dev --develop",
