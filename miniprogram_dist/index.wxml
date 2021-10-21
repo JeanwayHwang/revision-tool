@@ -1,0 +1,54 @@
+<view class="ui-review-wrap">
+    <image class="origin-img" mode="widthFix" src="https://p0.meituan.net/travelcube/77dd957f2e9f3d2bd90df86a75d5bc202253243.jpg"/>
+    <view class="review-wrap">
+        <!-- 视觉稿遮罩区域 -->
+        <movable-area class="ui-drag-wrap">
+            <movable-view x="{{0}}" y="{{offsetY}}" out-of-bounds="{{true}}" direction="all" class="ui-drag" disabled="{{!canImgDraggable}}" bind:change="moveUI">
+                <image class="origin-ui" style="{{'opacity:' + (opacityValue / 100)}}" mode="widthFix" src="{{originImgUrl}}" alt="原视觉感"></image>
+            </movable-view>
+        </movable-area>
+        <!-- 工具栏设置区域 -->
+        <view wx-if="{{showBar}}" class="setting-bar">
+            <view class="setting-bar-wrap">
+                <view class="setting-bar-item">
+                    <view class="setting-btn" bindtap="addImage">
+                        <image class="btn-icon" src="https://p0.meituan.net/travelcube/3dc16fe832c05dd1162b0499cb023c6e526.png" mode="aspectFill"/>
+                        导入
+                    </view>
+                </view>
+                <view class="setting-bar-item">
+                    <view class="setting-btn" bindtap="toggleImgDraggable">
+                        <image class="btn-icon" src="{{ canImgDraggable ? 'https://p0.meituan.net/travelcube/dfafe31af161cd3468ab37a13f3098a6475.png' : 'https://p0.meituan.net/travelcube/61632396c4678562cab51cbda09b4cc1455.png'}}" mode="aspectFill"/>
+                        {{ canImgDraggable ? '锁定' : '解锁' }}
+                    </view>
+                </view>
+                <view class="setting-bar-item">
+                    <view class="setting-btn" bindtap="hiddenBar">
+                        <image class="btn-icon" src="https://p0.meituan.net/travelcube/6e68c0826e2583abd646b889519cf021849.png" mode="aspectFill"/>
+                        收起
+                    </view>
+                </view>
+                <view class="setting-bar-item">
+                    <view class="setting-btn" bindtap="moveUp">
+                        <image class="btn-icon" src="https://p1.meituan.net/travelcube/7b1caaf28832da312ab1649526b078ba309.png" mode="aspectFill"/>
+                        上移
+                    </view>
+                </view>
+                <view class="setting-bar-item">
+                    <view class="setting-btn" bindtap="moveDown">
+                        <image class="btn-icon" src="https://p0.meituan.net/travelcube/047002a8126a7ca6378feac07a946ab3408.png" mode="aspectFill"/>
+                        下移
+                    </view>
+                </view>
+            </view>
+            <view class="opacity-bar">
+                <view class="opacity-title">透明度</view>
+                <view class="slider-wrap">
+                    <slider min="0" max="100" value="{{opacityValue}}" activeColor="#fa2c19" block-size="16" bindchanging="onChangeOpacity" show-value/>
+                </view>
+            </view>
+        </view>
+        <!-- 悬浮导航 -->
+        <view class="fixed-nav" wx-if="{{!showBar}}" bindtap="showSettingBar">走查工具</view>
+    </view>
+</view>
