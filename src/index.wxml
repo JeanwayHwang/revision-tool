@@ -1,5 +1,5 @@
-<view class="ui-review-wrap">
-    <image class="origin-img" mode="widthFix" src="https://p0.meituan.net/travelcube/77dd957f2e9f3d2bd90df86a75d5bc202253243.jpg"/>
+<view wx-if="{{showBar}}" class="ui-review-wrap">
+    <!-- <image class="origin-img" mode="widthFix" src="https://p0.meituan.net/travelcube/77dd957f2e9f3d2bd90df86a75d5bc202253243.jpg"/> -->
     <view class="review-wrap">
         <!-- 视觉稿遮罩区域 -->
         <movable-area class="ui-drag-wrap">
@@ -8,7 +8,7 @@
             </movable-view>
         </movable-area>
         <!-- 工具栏设置区域 -->
-        <view wx-if="{{showBar}}" class="setting-bar">
+        <view class="setting-bar">
             <view class="setting-bar-wrap">
                 <view class="setting-bar-item">
                     <view class="setting-btn" bindtap="addImage">
@@ -48,7 +48,7 @@
                 </view>
             </view>
         </view>
-        <!-- 悬浮导航 -->
-        <view class="fixed-nav" wx-if="{{!showBar}}" bindtap="showSettingBar">走查工具</view>
     </view>
 </view>
+<!-- 悬浮导航 -->
+<view class="fixed-nav" wx-if="{{!showBar}}" bindtap="showSettingBar">走查工具</view>
