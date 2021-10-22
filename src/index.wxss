@@ -1,5 +1,7 @@
 .ui-review-wrap {
     width: 100vw;
+    position: relative;
+    z-index: 99999;
 }
 .origin-img {
     width: 100%;
@@ -40,6 +42,7 @@
 .setting-bar-wrap {
     width: 100%;
     display: flex;
+    padding-top: 4px;
 }
 .setting-bar-item {
     flex: 1;
@@ -93,7 +96,7 @@
     position: fixed;
     right: 0;
     bottom: 100px;
-    z-index: 99;
+    z-index: 99999;
     font-size: 12px;
     line-height: 34px;
     color: #fff;
