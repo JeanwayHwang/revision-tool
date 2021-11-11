@@ -1,6 +1,6 @@
 {
   "name": "revision-tool",
-  "version": "1.3.1",
+  "version": "1.4.1",
   "description": "旨在帮助前端工程师在界面重构阶段就能快速发现页面和视觉稿的差异，减少大量和设计师的沟通、走查成本。",
   "main": "dist/index.js",
   "scripts": {
